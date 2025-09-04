@@ -1,2 +1,2 @@
 # -student-portal-demo
-nissi
+"This app helps students login, check marks, submit assignments"
