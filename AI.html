@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevBot - AI Assistant for DevOps</title>
+  <link rel="stylesheet" href="1styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🤖 DevBot</h1>
+    <p>Your AI-powered DevOps companion</p>
+  </header>
+
+  <main>
+    <div class="chat-container">
+      <div class="chat-box" id="chat-box">
+        <!-- Messages will appear here -->
+      </div>
+      <form id="chat-form">
+        <input type="text" id="user-input" placeholder="Ask DevBot anything..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>Built for GitHub DevOps teams 🚀</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('chat-form');
+    const input = document.getElementById('user-input');
+    const chatBox = document.getElementById('chat-box');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const userText = input.value.trim();
+      if (userText) {
+        const userMessage = `<div class="message user">🧑‍💻 ${userText}</div>`;
+        chatBox.innerHTML += userMessage;
+
+        // Simulated bot response
+        const botReply = `<div class="message bot">🤖 DevBot: I'm analyzing your GitHub workflows...</div>`;
+        chatBox.innerHTML += botReply;
+
+        input.value = '';
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    });
+  </script>
+</body>
+</html>
